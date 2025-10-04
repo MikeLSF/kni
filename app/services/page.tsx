@@ -2,82 +2,14 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Settings, 
-  Network, 
-  Wrench, 
-  ShoppingCart, 
-  HeadphonesIcon, 
-  Video, 
-  Smartphone,
-  ExternalLink
-} from "lucide-react";
+import { Settings, Network, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { SUMMARY_SERVICES, SERVICE_SECTIONS } from "@/lib/constants/services";
+import { COMPANY_INFO, ANIMATION_DELAYS, STYLES } from "@/lib/constants/company";
+import { PAGE_METADATA } from "@/lib/constants/metadata";
 import maintenanceImg from "@/assets/maintenance.jpg";
 import networksImg from "@/assets/networks.jpg";
 import salesRepairImg from "@/assets/sales-repair.jpg";
-
-const summaryServices = [
-  {
-    icon: ShoppingCart,
-    title: "Vente",
-    items: [
-      "Nous vous proposons une large gamme de matériel & accessoires, du câble en passant par la souris à l'ordinateur complet",
-      "Les consommables vous sont proposés en originaux et compatibles de qualités à prix planchés",
-      "Nous vous conseillons & assistons également pour la gamme Apple",
-      "N'hésitez pas à nous consulter, nous ferons notre maximum pour vous satisfaire !"
-    ]
-  },
-  {
-    icon: Wrench,
-    title: "Réparation",
-    items: [
-      "Nous réalisons de nombreux types de réparations, n'hésitez pas à nous consulter, voici quelques exemples :",
-      "Une panne sur un ordinateur, serveur, ...",
-      "Un écran cassé sur un ordinateur portable, un téléphone, ...",
-      "La vitre cassée de votre appareil Apple (iPhone, iPad, MacBook, ...)",
-      "Une panne de téléphone due à un soucis de câblage, une mauvaise qualité du câblage intérieur, un remplacement de prise, ..."
-    ]
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "Assistance",
-    items: [
-      "Diffusé à toute l'équipe",
-      "Prise en charge rapide",
-      "Tous types de questions",
-      "Redirigé si besoin",
-      "Traité en priorité"
-    ],
-    cta: { text: "Demander une assistance", href: "/support" }
-  },
-  {
-    icon: Video,
-    title: "Vidéo surveillance",
-    items: [
-      "Nous vous proposons le placement de systèmes de vidéo surveillance",
-      "en intérieur & extérieur",
-      "avec ou sans fil",
-      "avec ou sans alertes",
-      "avec vision nocturne",
-      "Plusieurs types de systèmes sont possibles (toutes sont accessibles à distance) :",
-      "des caméras fonctionnant en solo sur le cloud : vous recevez des notifications par mail, enregistrement sur serveur FTP, carte mémoire, ...",
-      "des caméras associées à un DVR : notifications, enregistrement sur disque dur local , ...",
-      "des caméras IP associées à un NAS : un Synology, des caméras IP & vous avec des enregistrements, notifications, ...",
-      "N'hésitez pas, contactez-nous & nous vous proposerons différentes solutions !"
-    ]
-  },
-  {
-    icon: Smartphone,
-    title: "Film2Protection / Fan2Pieces",
-    items: [
-      "Depuis avril 2017, KNInformatic a lancé Film2Protection, devenu Fan2Pieces en 2019",
-      "une boutique en ligne vous proposant des pièces, accessoires & films de protection en verre trempé",
-      "pour vos smartphones, votre console Nintendo Switch,..."
-    ],
-    cta: { text: "Voir le site", href: "https://www.fan2pieces.com/", external: true }
-  }
-];
 
 export default function Services() {
   return (
@@ -96,11 +28,11 @@ export default function Services() {
                 Nos <span className="glow-text">services</span>
               </h1>
               <p className="text-xl text-muted-foreground font-inter">
-                KNInformatic propose une multitude de services informatiques
+                {PAGE_METADATA.services.description}
               </p>
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] transition-all font-inter font-semibold text-lg px-8"
+                className={STYLES.buttonPrimary}
                 asChild
               >
                 <a href="/support">Demander une assistance</a>
@@ -115,15 +47,15 @@ export default function Services() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 animate-slide-up">
                 <h2 className="text-4xl md:text-5xl font-orbitron font-bold">
-                  Maintenance et <span className="glow-text">installation</span>
+                  {SERVICE_SECTIONS.maintenance.title.split(' ')[0]} <span className="glow-text">{SERVICE_SECTIONS.maintenance.title.split(' ')[2]}</span>
                 </h2>
                 
                 <div className="space-y-4 text-muted-foreground font-inter">
-                  <p>Vous avez du matériel, une infrastructure?</p>
-                  <p>Vous cherchez un prestataire de services afin de la maintenir en état de fonctionnement et performante ?</p>
-                  <p>Vous démarrez activité?</p>
+                  {SERVICE_SECTIONS.maintenance.description.slice(0, 3).map((desc, i) => (
+                    <p key={i}>{desc}</p>
+                  ))}
                   <p className="text-foreground">
-                    KN Informatic vous écoute, vous propose une assistance, des conseils, afin de vous proposer le matériel adapté à vos besoins tout en veillant à ne pas vous faire investir dans du matériel bien trop coûteux par rapport à vos besoins!
+                    {SERVICE_SECTIONS.maintenance.description[3]}
                   </p>
                 </div>
               </div>
@@ -158,17 +90,17 @@ export default function Services() {
                   <div className="p-3 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl">
                     <Network className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-3xl font-orbitron font-bold">Réseaux</h3>
+                  <h3 className="text-3xl font-orbitron font-bold">{SERVICE_SECTIONS.networks.title}</h3>
                 </div>
                 
                 <div className="space-y-4 text-muted-foreground font-inter">
-                  <p>Vous avez un ou plusieurs lieux de travail?</p>
-                  <p>Vous voulez avoir la possibilité d'effectuer du <span className="text-primary font-semibold">télétravail</span> ?</p>
+                  <p>{SERVICE_SECTIONS.networks.description[0]}</p>
+                  <p>{SERVICE_SECTIONS.networks.description[1].split('télétravail')[0]}<span className="text-primary font-semibold">télétravail</span> ?</p>
                   <p>
-                    Vos besoins sont analysés avec vous afin de mettre en place les <span className="text-primary font-semibold">solutions</span> les plus <span className="text-primary font-semibold">simples</span> d'utilisation possible !
+                    {SERVICE_SECTIONS.networks.description[2].split('solutions')[0]}<span className="text-primary font-semibold">solutions</span>{SERVICE_SECTIONS.networks.description[2].split('solutions')[1].split('simples')[0]}<span className="text-primary font-semibold">simples</span>{SERVICE_SECTIONS.networks.description[2].split('simples')[1]}
                   </p>
-                  <p>Une liaison aérienne entre votre bâtiment principal et votre atelier quelque peu éloigné par exemple ?</p>
-                  <p className="text-foreground font-medium">Il existe des possibilités !</p>
+                  <p>{SERVICE_SECTIONS.networks.description[3]}</p>
+                  <p className="text-foreground font-medium">{SERVICE_SECTIONS.networks.description[4]}</p>
                 </div>
               </div>
             </div>
@@ -184,15 +116,13 @@ export default function Services() {
                   <div className="p-3 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl">
                     <Settings className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-3xl font-orbitron font-bold">Vente et réparation</h3>
+                  <h3 className="text-3xl font-orbitron font-bold">{SERVICE_SECTIONS.salesRepair.title}</h3>
                 </div>
                 
                 <div className="space-y-4 text-muted-foreground font-inter">
+                  <p>{SERVICE_SECTIONS.salesRepair.description[0]}</p>
                   <p>
-                    KN Informatic vous propose un catalogue de produits variés en s'efforçant de répondre à vos critères de qualités tout en veillant à votre budget!
-                  </p>
-                  <p>
-                    <span className="text-foreground font-semibold">Une panne</span> ? Il n'est pas toujours nécessaire de remplacer, une réparation est souvent envisageable, nous analysons les coûts avec vous et faisons en sorte que les services soient rétablis au plus vite, avec une solution temporaire si la panne est trop conséquente.
+                    <span className="text-foreground font-semibold">Une panne</span> ? {SERVICE_SECTIONS.salesRepair.description[1].split('?')[1].trim()}
                   </p>
                 </div>
               </div>
@@ -221,11 +151,11 @@ export default function Services() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {summaryServices.map((service, index) => (
+              {SUMMARY_SERVICES.map((service, index) => (
                 <Card 
                   key={index}
-                  className="group glass hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(6,182,212,0.3)] animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className={`${STYLES.cardAnimation} hover:shadow-[${STYLES.primaryGlow}] animate-slide-up`}
+                  style={{ animationDelay: `${index * ANIMATION_DELAYS.card}s` }}
                 >
                   <CardHeader>
                     <div className="flex items-center gap-4 mb-4">
@@ -263,9 +193,7 @@ export default function Services() {
                             <ExternalLink className="w-4 h-4" />
                           </a>
                         ) : (
-                          <a href={service.cta.href}>
-                            {service.cta.text}
-                          </a>
+                          <a href={service.cta.href}>{service.cta.text}</a>
                         )}
                       </Button>
                     )}

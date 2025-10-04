@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import heroImage from "@/assets/hero-tech.jpg";
+import { COMPANY_INFO, STYLES } from "@/lib/constants/company";
 
 export const HeroSection = () => {
   return (
@@ -14,49 +16,51 @@ export const HeroSection = () => {
           <div className="space-y-8 animate-slide-up">
             <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
               <span className="text-primary font-inter text-sm font-medium">
-                Partenaire 3CX Officiel
+                {COMPANY_INFO.partner}
               </span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-orbitron font-bold leading-tight">
-              Votre partenaire <span className="glow-text">informatique</span> de{" "}
+              {COMPANY_INFO.hero.title.split('informatique')[0]}
+              <span className="glow-text">informatique</span>{" "}
+              {COMPANY_INFO.hero.title.split('informatique')[1].split('A à Z')[0]}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                 A à Z
               </span>
             </h1>
 
             <p className="text-lg text-muted-foreground font-inter leading-relaxed">
-              De l'achat à l'utilisation, les réparations, la mise à jour, …
+              {COMPANY_INFO.hero.subtitle}
               <br /><br />
-              Nous proposons nos services aux particuliers.
+              {COMPANY_INFO.hero.description[0]}
               <br /><br />
-              <span className="text-foreground font-medium">Une utilisation professionnelle ?</span>
+              <span className="text-foreground font-medium">{COMPANY_INFO.hero.description[1]}</span>
               <br />
-              Nous analysons vos besoins & y répondons !
+              {COMPANY_INFO.hero.description[2]}
             </p>
 
             <div className="space-y-3 text-muted-foreground font-inter">
-              <p>Du matériel, des services, une visibilité sur internet…</p>
+              <p>{COMPANY_INFO.hero.description[3]}</p>
               <p className="text-sm">
-                La seule chose que nous ne proposons pas actuellement est le développement de vos applications.
+                {COMPANY_INFO.hero.description[4]}
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] transition-all font-inter font-semibold text-lg px-8"
+                className={STYLES.buttonPrimary}
                 asChild
               >
-                <a href="/services">Consultez nos services</a>
+                <a href={COMPANY_INFO.urls.services}>Consultez nos services</a>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-primary/50 hover:bg-primary/10 font-inter font-semibold text-lg px-8"
+                className={STYLES.buttonOutline}
                 asChild
               >
-                <a href="/contact">Nous contacter</a>
+                <a href={COMPANY_INFO.urls.contact}>Nous contacter</a>
               </Button>
             </div>
           </div>
@@ -64,10 +68,13 @@ export const HeroSection = () => {
           {/* Image */}
           <div className="relative animate-fade-in">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-3xl blur-2xl"></div>
-            <img 
+            <Image 
               src={heroImage} 
               alt="Workspace technologique futuriste" 
               className="relative rounded-3xl border border-primary/30 shadow-2xl animate-float"
+              width={600}
+              height={600}
+              priority
             />
           </div>
         </div>

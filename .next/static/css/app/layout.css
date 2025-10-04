@@ -2428,6 +2428,11 @@ All colors MUST be HSL.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.hover\:shadow-\[\$\{STYLES\.primaryGlow\}\]:hover {
+  --tw-shadow-color: ${STYLES.primaryGlow};
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .hover\:after\:bg-sidebar-border:hover::after {
   content: var(--tw-content);
   background-color: hsl(var(--sidebar-border));

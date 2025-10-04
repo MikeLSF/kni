@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { DEFAULT_METADATA } from "@/lib/constants/metadata";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -13,10 +14,7 @@ const orbitron = Orbitron({
   variable: "--font-orbitron",
 });
 
-export const metadata: Metadata = {
-  title: "KNI - Solutions Informatiques",
-  description: "Solutions informatiques professionnelles",
-};
+export const metadata: Metadata = DEFAULT_METADATA;
 
 export default function RootLayout({
   children,
