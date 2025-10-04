@@ -5,6 +5,7 @@ import { Button } from "@/src/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/src/components/ui/sheet";
 import { useState } from "react";
 import Image from "next/image";
+import logoImage from "@/src/assets/kni-white.png";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ export const Header = () => {
             <div className="relative w-32 h-12">
               <div className="absolute inset-0 bg-primary blur-xl opacity-50 animate-pulse-glow"></div>
               <Image 
-                src="/kni-white.png" 
+                src={logoImage} 
                 alt="KNI Informatique" 
                 fill
                 className="relative object-contain"

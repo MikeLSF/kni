@@ -1,5 +1,6 @@
 import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import logoImage from "@/src/assets/kni-white.png";
 
 export const Footer = () => {
   return (
@@ -11,7 +12,7 @@ export const Footer = () => {
             <div className="relative w-48 h-48">
               <div className="absolute inset-0 bg-primary blur-xl opacity-50"></div>
               <Image 
-                src="/kni-white.png" 
+                src={logoImage} 
                 alt="KNI Informatique" 
                 fill
                 className="relative object-contain"
