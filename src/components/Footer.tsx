@@ -1,23 +1,22 @@
 import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
     <footer id="contact" className="relative border-t border-primary/20 py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-12">
-          {/* Logo & Description */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="relative">
-                <div className="absolute inset-0 bg-primary blur-xl opacity-50"></div>
-                <div className="relative text-3xl font-orbitron font-bold glow-text">
-                  KN<span className="text-secondary">I</span>
-                </div>
-              </div>
+          {/* Logo */}
+          <div className="flex items-center">
+            <div className="relative w-48 h-48">
+              <div className="absolute inset-0 bg-primary blur-xl opacity-50"></div>
+              <Image 
+                src="/kni-white.png" 
+                alt="KNI Informatique" 
+                fill
+                className="relative object-contain"
+              />
             </div>
-            <p className="text-sm text-muted-foreground font-inter">
-              Votre partenaire informatique de confiance à Verviers
-            </p>
           </div>
 
           {/* Contact Info */}
@@ -58,17 +57,23 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-orbitron font-bold mb-4">KN Informatique Scomm</h3>
+            <p className="text-sm text-muted-foreground font-inter">
+              Votre partenaire informatique de confiance à Verviers
+            </p>
             <div className="space-y-2 text-sm font-inter text-muted-foreground">
               <p>TVA : BE0725.686.001</p>
-              <a 
-                href="https://mikeconception.be/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-primary transition-colors"
-              >
-                © Mike Conception 2022
-                <ExternalLink className="w-3 h-3" />
-              </a>
+              <p className="flex items-center gap-2">
+                © Mike Conception {new Date().getFullYear()} &{" "}
+                <a 
+                  href="https://pixeldrive.be/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors inline-flex items-center gap-1"
+                >
+                  Pixeldrive
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </p>
               <p className="text-xs">Made with passion.</p>
             </div>
           </div>

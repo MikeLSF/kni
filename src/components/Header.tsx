@@ -4,6 +4,7 @@ import { Phone, Facebook, Menu } from "lucide-react";
 import { Button } from "@/src/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/src/components/ui/sheet";
 import { useState } from "react";
+import Image from "next/image";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,14 +15,14 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="relative">
+            <div className="relative w-32 h-12">
               <div className="absolute inset-0 bg-primary blur-xl opacity-50 animate-pulse-glow"></div>
-              <div className="relative text-3xl font-orbitron font-bold glow-text">
-                KN<span className="text-secondary">I</span>
-              </div>
-            </div>
-            <div className="hidden md:block font-inter text-sm text-muted-foreground">
-              Informatique
+              <Image 
+                src="/kni-white.png" 
+                alt="KNI Informatique" 
+                fill
+                className="relative object-contain"
+              />
             </div>
           </div>
 

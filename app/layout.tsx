@@ -14,7 +14,14 @@ const orbitron = Orbitron({
   variable: "--font-orbitron",
 });
 
-export const metadata: Metadata = DEFAULT_METADATA;
+export const metadata: Metadata = {
+  ...DEFAULT_METADATA,
+  icons: {
+    icon: '/kni-white.png',
+    shortcut: '/kni-white.png',
+    apple: '/kni-white.png',
+  },
+};
 
 export default function RootLayout({
   children,

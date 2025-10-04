@@ -4,7 +4,7 @@ import { Button } from "@/src/components/ui/button";
 import { Card } from "@/src/components/ui/card";
 import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
-import kevinProfile from "@/src/assets/kevin-profile.jpg";
+import kevinProfile from "@/src/assets/kevin.jpg";
 
 export default function About() {
   return (

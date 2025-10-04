@@ -8,12 +8,12 @@ export const CTASection = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="glass p-12 md:p-16 rounded-3xl text-center max-w-4xl mx-auto border-primary/30 shadow-[0_0_60px_rgba(6,182,212,0.3)] animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-6">
+        <div className="glass p-6 md:p-12 lg:p-16 rounded-3xl text-center max-w-4xl mx-auto border-primary/30 shadow-[0_0_60px_rgba(6,182,212,0.3)] animate-slide-up">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-orbitron font-bold mb-6 break-words">
             Envie de discuter de votre <span className="glow-text">projet</span> ?
           </h2>
           
-          <p className="text-lg text-muted-foreground font-inter mb-8">
+          <p className="text-base md:text-lg text-muted-foreground font-inter mb-8 break-words">
             Contactez-nous pour discuter de vos besoins en informatique et trouver la solution adaptée
           </p>
 
