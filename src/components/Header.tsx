@@ -1,8 +1,8 @@
 "use client";
 
 import { Phone, Facebook, Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/src/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/src/components/ui/sheet";
 import { useState } from "react";
 
 export const Header = () => {

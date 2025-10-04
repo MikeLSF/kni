@@ -1,15 +1,15 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Header } from "@/src/components/Header";
+import { Footer } from "@/src/components/Footer";
+import { Button } from "@/src/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/src/components/ui/card";
 import { Settings, Network, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { SUMMARY_SERVICES, SERVICE_SECTIONS } from "@/lib/constants/services";
 import { COMPANY_INFO, ANIMATION_DELAYS, STYLES } from "@/lib/constants/company";
 import { PAGE_METADATA } from "@/lib/constants/metadata";
-import maintenanceImg from "@/assets/maintenance.jpg";
-import networksImg from "@/assets/networks.jpg";
-import salesRepairImg from "@/assets/sales-repair.jpg";
+import maintenanceImg from "@/src/assets/maintenance.jpg";
+import networksImg from "@/src/assets/networks.jpg";
+import salesRepairImg from "@/src/assets/sales-repair.jpg";
 
 export default function Services() {
   return (

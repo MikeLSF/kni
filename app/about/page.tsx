@@ -1,10 +1,10 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Header } from "@/src/components/Header";
+import { Footer } from "@/src/components/Footer";
+import { Button } from "@/src/components/ui/button";
+import { Card } from "@/src/components/ui/card";
 import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
-import kevinProfile from "@/assets/kevin-profile.jpg";
+import kevinProfile from "@/src/assets/kevin-profile.jpg";
 
 export default function About() {
   return (

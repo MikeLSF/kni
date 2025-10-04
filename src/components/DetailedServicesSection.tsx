@@ -1,5 +1,5 @@
 import { Video, ShoppingCart, Wrench, Shield } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/src/components/ui/card";
 
 const detailedServices = [
   {

@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
-import heroImage from "@/assets/hero-tech.jpg";
+import heroImage from "@/src/assets/hero-tech.jpg";
 import { COMPANY_INFO, STYLES } from "@/lib/constants/company";
 
 export const HeroSection = () => {
