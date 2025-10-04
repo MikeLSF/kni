@@ -56,7 +56,7 @@ export const HeroSection = () => {
                 className="border-primary/50 hover:bg-primary/10 font-inter font-semibold text-lg px-8"
                 asChild
               >
-                <a href="/#contact">Nous contacter</a>
+                <a href="/contact">Nous contacter</a>
               </Button>
             </div>
           </div>

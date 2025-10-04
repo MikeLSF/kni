@@ -20,9 +20,12 @@ export const CTASection = () => {
           <Button 
             size="lg"
             className="bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_50px_rgba(6,182,212,0.7)] transition-all font-inter font-bold text-lg px-10 group"
+            asChild
           >
-            Commençons maintenant
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <a href="/contact">
+              Commençons maintenant
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
           </Button>
         </div>
       </div>

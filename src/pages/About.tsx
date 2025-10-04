@@ -44,7 +44,7 @@ const About = () => {
                 className="bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] transition-all font-inter font-semibold text-lg px-8"
                 asChild
               >
-                <a href="/#contact">Contactez-nous</a>
+                <a href="/contact">Contactez-nous</a>
               </Button>
             </div>
           </div>
@@ -113,7 +113,7 @@ const About = () => {
                         className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] transition-all font-inter font-semibold"
                         asChild
                       >
-                        <a href="/#contact">Contactez-nous</a>
+                        <a href="/contact">Contactez-nous</a>
                       </Button>
                     </div>
                   </div>
