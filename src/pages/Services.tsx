@@ -100,8 +100,9 @@ const Services = () => {
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] transition-all font-inter font-semibold text-lg px-8"
+                asChild
               >
-                Demander une assistance
+                <a href="/support">Demander une assistance</a>
               </Button>
             </div>
           </div>

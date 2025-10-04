@@ -54,8 +54,9 @@ export const Header = () => {
             </a>
             <Button 
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-inter font-medium shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+              asChild
             >
-              Support
+              <a href="/support">Support</a>
             </Button>
           </div>
         </div>
