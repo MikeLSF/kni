@@ -27,6 +27,9 @@ export const ServicesSection = () => {
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-4">
             Nos secteurs <span className="glow-text">d'activités</span>
           </h2>
+          <a href="/services" className="text-primary hover:text-secondary transition-colors font-inter">
+            Voir tous nos services →
+          </a>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">

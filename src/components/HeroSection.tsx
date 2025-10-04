@@ -46,15 +46,17 @@ export const HeroSection = () => {
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] transition-all font-inter font-semibold text-lg px-8"
+                asChild
               >
-                Consultez nos services
+                <a href="/services">Consultez nos services</a>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
                 className="border-primary/50 hover:bg-primary/10 font-inter font-semibold text-lg px-8"
+                asChild
               >
-                Nous contacter
+                <a href="/#contact">Nous contacter</a>
               </Button>
             </div>
           </div>

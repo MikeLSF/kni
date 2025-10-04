@@ -21,16 +21,16 @@ export const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <a href="#accueil" className="font-inter text-sm hover:text-primary transition-colors">
+            <a href="/" className="font-inter text-sm hover:text-primary transition-colors">
               ACCUEIL
             </a>
-            <a href="#services" className="font-inter text-sm hover:text-primary transition-colors">
+            <a href="/services" className="font-inter text-sm hover:text-primary transition-colors">
               NOS SERVICES
             </a>
-            <a href="#apropos" className="font-inter text-sm hover:text-primary transition-colors">
+            <a href="/#apropos" className="font-inter text-sm hover:text-primary transition-colors">
               A PROPOS DE NOUS
             </a>
-            <a href="#contact" className="font-inter text-sm hover:text-primary transition-colors">
+            <a href="/#contact" className="font-inter text-sm hover:text-primary transition-colors">
               CONTACT
             </a>
           </nav>
